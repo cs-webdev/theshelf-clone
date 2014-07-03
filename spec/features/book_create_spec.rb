@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Create a book' do
 
   it 'should allow for respective show view' do
-    book = Book.create name:'Book', author:'Author', edition:1
+    book = Book.create name:'Book', au thor:'Author', edition:1
 
     visit(books_path + '/' + book.id.to_s)
 
