@@ -11,12 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620191848) do
+ActiveRecord::Schema.define(version: 20140628140629) do
 
   create_table "books", force: true do |t|
     t.string  "name"
     t.string  "author"
     t.integer "edition"
+  end
+
+  create_table "lendings", force: true do |t|
+    t.date     "borrow_date"
+    t.date     "return_date"
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
