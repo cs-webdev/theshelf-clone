@@ -4,14 +4,24 @@ class LendingsController < ApplicationController
     @lendings = Lending.all
   end
 
-  def new
-    @lending = Lending.new
+  def borrow
+    Lending.create user: User.first, book: Book.find(params[:book_id]), borrow_date: Date.current
+
+    redirect_to books_path
   end
 
-  def create
-    Lending.create lending_params
+  def return
+    lending = Lending.find_by_book_id params[:book_id]
 
-    redirect_to root_path
+    lending.return_date = Date.current
+
+    if lending.valid?
+      lending.save
+
+      redirect_to books_path, notice: 'Book returned'
+    else
+      redirect_to books_path, alert: 'Failed to return the book'
+    end
   end
 
   private
