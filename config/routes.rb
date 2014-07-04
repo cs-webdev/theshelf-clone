@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   get 'books/:book_id/return', to: 'lendings#return', as: 'return'
 
-  root "book#index"
+  root 'books#index'
 
 end
