@@ -2,7 +2,12 @@
   <ul>
     <% @books.each do |book| %>
         <li>
-          <%= book.name %>
+          <div>
+            Book: <%= book.name %>
+          </div>
+          <div>
+            <%= link_to 'Borrow', borrow_path(book) %> <%= link_to 'Return', return_path(book) %>
+          </div>
         </li>
     <% end %>
   </ul>
