@@ -5,13 +5,14 @@ class LendingsController < ApplicationController
   end
 
   def borrow
-    Lending.create user: User.first, book: Book.find(params[:book_id]), borrow_date: Date.current
+    Lending.create user: current_user, book: Book.find(params[:book_id]), borrow_date: Date.current
 
     redirect_to books_path
   end
 
   def return
-    lending = Lending.find_by_book_id params[:book_id]
+    
+    lending = current_user.lendings.where(book_id: params[:book_id]).first
 
     lending.return_date = Date.current
 
