@@ -18,11 +18,11 @@
   border: $card-border;
   margin-bottom: $base-line-height;
   cursor: pointer;
-  box-shadow: 0 2px 4px darken($base-background-color, 10);
+  box-shadow: 0 2px 4px darken($base-body-color, 10);
   position: relative;
 
   @include media($large-screen) {
-    @include span-columns(4);  
+    @include span-columns(4);
     @include omega(3n);
   }
 
@@ -112,11 +112,11 @@
 
   &:hover {
     background-color: $card-hover-background;
-    
+
     .card-image img {
       background: $card-image-hover-background;
     }
-  
+
     .card-header {
       background-color: $card-hover-background;
     }
