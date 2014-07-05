@@ -1,19 +1,24 @@
 <div class="card">
-  <% if signed_in? && book.lent? %>
-    <div class="ribbon-wrapper">
-      <% if book.lent_to?(current_user) %>
-        <div class="ribbon">Reading</div>
-      <% else %>
-        <div class="ribbon">Borrowed</div>
-      <% end %>
+  <%= link_to book_path(book), class: 'card-link' do %>
+    <% if signed_in? && book.lent? %>
+      <div class="ribbon-wrapper">
+        <% if book.lent_to?(current_user) %>
+          <div class="ribbon">Reading</div>
+        <% else %>
+          <div class="ribbon">Borrowed</div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="card-image">
+      <img src="" alt="">
+    </div>
+
+    <div class="card-header">
+      <%= book.name %>
     </div>
   <% end %>
-  <div class="card-image">
-    <img src="" alt="">
-  </div>
-  <div class="card-header">
-    <%= book.name %>
-  </div>
+
   <div class="card-copy">
     <% if signed_in? %>
       <div>

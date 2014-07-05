@@ -1,13 +1,7 @@
-<div>
-  <ul class="cards">
-    <% @books.each do |book| %>
-      <li>
-        <%= link_to book_path(book) do %>
-          <%= render 'books/book', book: book %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+<div class="cards">
+  <% @books.each do |book| %>
+    <%= render 'books/book', book: book %>
+  <% end %>
 </div>
 
 <div>
