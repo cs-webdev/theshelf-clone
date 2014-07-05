@@ -1,7 +1,11 @@
 <div>
-  <ul>
+  <ul class="cards">
     <% @books.each do |book| %>
-        <li><%= render 'books/book', book: book %></li>
+      <li>
+        <%= link_to book_path(book) do %>
+          <%= render 'books/book', book: book %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 </div>
