@@ -39,6 +39,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'clearance'
+gem 'bourbon'
+gem 'bitters'
+gem 'refills'
 
 group :development, :test do
   gem 'pry'

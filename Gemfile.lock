@@ -31,6 +31,13 @@ GEM
     bcrypt (3.1.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bitters (0.10.0)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     capybara (2.3.0)
       mime-types (>= 1.16)
@@ -103,6 +110,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
+    refills (0.0.2)
     rspec-core (3.0.2)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.2)
@@ -164,12 +172,15 @@ PLATFORMS
 
 DEPENDENCIES
   binding_of_caller
+  bitters
+  bourbon
   capybara
   clearance
   jbuilder (~> 2.0)
   jquery-rails
   pry
   rails (= 4.1.2.rc1)
+  refills
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

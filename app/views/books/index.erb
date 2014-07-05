@@ -1,14 +1,7 @@
 <div>
   <ul>
     <% @books.each do |book| %>
-        <li>
-          <div>
-            Book: <%= book.name %>
-          </div>
-          <div>
-            <%= link_to 'Borrow', borrow_path(book) %> <%= link_to 'Return', return_path(book) %>
-          </div>
-        </li>
+        <li><%= render 'books/book', book: book %></li>
     <% end %>
   </ul>
 </div>

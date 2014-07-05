@@ -1,0 +1,15 @@
+<div>
+    Title: <%= link_to book.name, book_path(book.id) %>
+</div>
+
+<% if signed_in? %>
+  <div>
+    <% if book.lent_to? current_user %>
+        <%= link_to 'Return', return_path(book) %>
+    <% elsif book.lent? %>
+        <p><%= book.borrower.email %> borrowed this book</p>
+    <% else %>
+        <%= link_to 'Borrow', borrow_path(book) %>
+    <% end %>
+  </div>
+<% end %>
