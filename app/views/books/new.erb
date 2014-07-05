@@ -1,0 +1,22 @@
+<div>
+  <%= form_for @book do |f| %>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+
+      <p>
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+      </p>
+
+      <p>
+        <%= f.label :edition %>
+        <%= f.text_field :edition %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+  <% end %>
+</div>
