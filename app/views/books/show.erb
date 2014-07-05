@@ -8,3 +8,10 @@
     Edition: <%= @book.edition %>
   </p>
 </div>
+
+<div>
+  <h1>History</h1>
+  <ul class="cards">
+      <%= render @book.lendings %>
+  </ul>
+</div>

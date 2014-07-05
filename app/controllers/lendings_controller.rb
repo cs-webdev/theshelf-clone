@@ -1,7 +1,7 @@
 class LendingsController < ApplicationController
 
   def index
-    @lendings = Lending.all
+    @lendings = current_user.lendings
   end
 
   def borrow
@@ -11,7 +11,6 @@ class LendingsController < ApplicationController
   end
 
   def return
-    
     lending = current_user.lendings.where(book_id: params[:book_id]).first
 
     lending.return_date = Date.current
