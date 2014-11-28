@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Create a book' do
 
   it 'should allow for respective show view' do
-    book = Book.create name:'Book', au thor:'Author', edition:1
+    book = Book.create name: 'Book', author: 'Author', edition: 1
 
     visit(books_path + '/' + book.id.to_s)
 
@@ -11,8 +11,8 @@ describe 'Create a book' do
   end
 
   it 'Should appear in Book index page' do
-    Book.create name:'Book 1', author:'Author 1', edition:1
-    Book.create name:'Book 2', author:'Author 2', edition:1
+    Book.create name: 'Book 1', author: 'Author 1', edition: 1
+    Book.create name: 'Book 2', author: 'Author 2', edition: 1
 
     visit(books_path)
 
